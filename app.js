@@ -128,22 +128,51 @@ function addToCart(index) {
     if (cartArr.includes(phones[index]) === true) {
         for (let i = 0; i < cartArr.length; i++) {
             if (cartArr[i] === phones[index]) {
-                console.log('item alreay mujood haa..');
+                console.log('Product Already Exists..');
                 cartArr[i].quantity += 1
                 console.log(cartArr);
             }
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Product Updated successfully',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
     }
     else {
+        console.log('Product Does Not Exists..');
         phones[index].quantity = 1
         cartArr.push(phones[index]);
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Item Added to cart successfully',
+            title: 'Product Added to cart successfully',
             showConfirmButton: false,
             timer: 1500
         })
     }
     console.log('cartArr ===> ', cartArr);
 }
+
+const cartItems = JSON.stringify(cartArr);
+    localStorage.setItem('cartArr', cartItems)
+
+function gotoCart() {
+    
+    window.location = "./cart.html";
+}
+    
+
+// const cartBtn = document.querySelector('.cart-btn');
+
+// function goToCart(){  
+//     const cart = JSON.stringify(cartArr);
+//     // localStorage.getItem('cartItem' , cart);
+//     localStorage.setItem('cartArr' , cart);
+//     console.log('cart called');
+  
+//     window.location = './cart.html';
+
+// }
