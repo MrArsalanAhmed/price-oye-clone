@@ -5,69 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-      <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <!-- <h1> cart </h1> -->
-    <div class="main">
+    
+    <body class="">
+        <nav>
+            <div class="bg-[#48afff] p-4 px-4 py-1 h-auto w3-full flex flex-wrap md:flex-row flex-col justify-between items-center">
+                <div class="container mx-auto flex justify-between items-center ">
+                    <h2 class="text-white text-2xl">
+                        <a href="./index.html" class="main-head">
+                            <!-- <img src="assets/remove.png" alt="" height="80" width="220"> -->
+                            MobileWORLD
+                        </a>                         
+                    </h2>
+                    <div class="w-1/2">
+                        <a href="#" class="block relative">
+                            <input class="border-2 border-gray-300 bg-white w-1/2 h-10 px-5 pr-10 rounded-lg text-sm focus:outline-none focus:border-blue-400" type="text" placeholder="Search...">
+                        </a>
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="#" class="block">
+                            <button class="bg-white text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out">Log in</button>
+                        </a>
+                        <a href="#" class="block">
+                            <button class="bg-[#48afff] text-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-500 border border-white-500 transition duration-300 ease-in-out">Register</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="h-max bg-gray-100 pt-10">
+            <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+            <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+                <div id="main-div" class="rounded-lg md:w-2/3">
 
-        <div class="bg-[#48afff] p-4 px-4 py-1 h-auto mb-4 w3-full flex flex-wrap md:flex-row flex-col justify-between items-center">
-              <div class="container mx-auto flex justify-between items-center ">
-                  <h2 class="text-white text-2xl">
-                      <a href="./index.html" class="main-head">
-                          <!-- <img src="assets/remove.png" alt="" height="80" width="220"> -->
-                          MobileWORLD
-                      </a>                         
-                  </h2>
-                  <div class="w-1/2">
-                      <a href="#" class="block relative">
-                          <input class="border-2 border-gray-300 bg-white w-1/2 h-10 px-5 pr-10 rounded-lg text-sm focus:outline-none focus:border-blue-400" type="text" placeholder="Search...">
-                      </a>
-                  </div>
-                  <div class="flex space-x-2">
-                      <a href="#" class="block">
-                          <button class="bg-white text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out">Log in</button>
-                      </a>
-                      <a href="#" class="block">
-                          <button class="bg-[#48afff] text-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-500 border border-white-500 transition duration-300 ease-in-out">Register</button>
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div class="flex justify-evenly text-center">
-              <p><img src="assets/samsung.jpg" class="cursor-pointer"/></p>
-              <p><img src="assets/apple.jpg" class="cursor-pointer"/></p>
-              <p><img src="assets/infinix.jpg" class="cursor-pointer"/></p>
-              <p><img src="assets/oppo.jpg" class="cursor-pointer"/></p>
-              <p><img src="assets/xiaomi.jpg" class="cursor-pointer"/></p>
-              <p><img src="assets/vivo.jpg" class="cursor-pointer"/></p>
-              <!-- <p class=""><img src="assets/tecno.jpg"/></p> -->
-              <!-- <p><img src="assets/realme.jpg"/></p> -->
-              <!-- <p><img src="assets/itel.jpg"/></p> -->
-          </div>
+                    <!-- card items -->
+
+                </div>
+                <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+                    <div class="mb-2 flex justify-between">
+                        <p class="text-gray-700">Subtotal</p>
+                        <p class="text-gray-700 subTotal"></p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p class="text-gray-700">Shipping</p>
+                        <p class="text-gray-700">1500 </p>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="flex justify-between">
+                        <p class="text-lg font-bold">Total</p>
+                        <div class="">
+                        <p class="mb-1 text-lg font-bold totalPrice"></p>
+                        <p class="text-sm text-gray-700">including VAT</p>
+                        </div>
+                    </div>
+                        <button class="mt-6 w-full rounded-md bg-[#38bdf8] py-1.5 font-medium text-white hover:bg-[#00a4ec]">Check out</button>
+                    </div>                    
+            </div>
+            <div class="mx-auto max-w-5xl justify-end px-6 md:flex md:space-x-6 xl:px-0">
+                <button onclick="goToHome()" class="bg-[#38bdf8] rounded-md px-6 py-3 text-white mt-4 hover:bg-[#00a4ec]">Shop More</button>
+            </div>
+        </div>
 
 
-        <!-- <div class="banner">
-              <img src="./assets/pakistan-priceoye-slider-1qm17.jpg"
-                    class="banner" alt="banner">
-
+        <!-- <h1 class="text-center text-4xl font-bold mt-5">Cart</h1>   -->
+      
+        <!-- <div id="main-div" class="containers mt-[3rem] gap-[20px] m-[50px]">
         </div> -->
-        <h1> Cart Item</h1>
-        
-
-        <div class="cartcontainer flex justify-evenly flex-wrap mt-[3rem] gap-[20px] m-[50px]">
-              
-        </div>
-
-        <div class="btn-home">
-            <button onclick="goToHome()" class="cart-btn bg-[#48afff] text-white px-4 py-2 rounded-lg"> Back TO Home </button>
-        </div>
-        
-  </div>
-
-
-
-     <script src="./cart.js"></script>
+      
+        <!-- <div class="text-center m-[5rem]">
+          <button onclick="goToHome()" class="bg-[#38bdf8] rounded-md px-6 py-3 text-white mt-4 hover:bg-[#00a4ec]">Shop More</button>
+         </div> -->
+      
+        <script src="cart.js"></script>
 </body>
 </html>

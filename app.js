@@ -44,8 +44,8 @@ const phones = [
         brand: 'Infinix',
         img:"https://rakistan.pk/wp-content/uploads/2021/11/infinix-zero-x-pro-pakistan-priceoye-im0ai-500x500-1.webp",
         model: 'Z10',
-        ram: 2,
-        rom: 16,
+        ram: 4,
+        rom: 62,
         camera: '5 megapixel',
         price: 38999,
     },
@@ -95,16 +95,15 @@ const phones = [
         price:31999 ,
     },
 ];
-
-const div = document.querySelector('.containers');
+const div = document.querySelector('.cardContainer');
 
 
 for (let i = 0; i < phones.length; i++) {
     // console.log(phones[i]);
     div.innerHTML += `
-    <div class="p-[2rem] border-black-200 border-solid border-2 rounded-lg drop-shadow-2xl bg-white justify-center">
-            <div class="card-image flex h-48 ">
-                <img src="${phones[i].img}" class="image">
+    <div class="p-[2rem] border-black-200 border-solid border-2 rounded-lg drop-shadow-2xl bg-white justify-evenly">
+            <div class="card-image flex h-48 justify-center">
+                <img src="${phones[i].img}" class="">
             </div>
             <p><span class="font-bold text-lg">Brand:</span> ${phones[i].brand}</p>
             <p><span class="font-bold text-lg">Model:</span> ${phones[i].model}</p>
@@ -117,62 +116,43 @@ for (let i = 0; i < phones.length; i++) {
     `
 
 }
-
 const cartArr = []
 
 function addToCart(index) {
-    // console.log(phones[index]);
-
-    // console.log('item included ===>', cartArr.includes(phones[index]));
-
-    if (cartArr.includes(phones[index]) === true) {
+    // console.log('includes in array ==>', cartArr.includes(phones[index]));
+    if (cartArr.includes(phones[index])) {
+        console.log('mujood ha');
         for (let i = 0; i < cartArr.length; i++) {
             if (cartArr[i] === phones[index]) {
-                console.log('Product Already Exists..');
                 cartArr[i].quantity += 1
-                console.log(cartArr);
             }
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Product Updated successfully',
-                showConfirmButton: false,
-                timer: 1500
-            })
         }
-    }
-    else {
-        console.log('Product Does Not Exists..');
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Item quantity updated successfully',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    } else {
+        console.log('mujood NAHI ha');
         phones[index].quantity = 1
         cartArr.push(phones[index]);
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Product Added to cart successfully',
+            title: 'Item added to cart successfully',
             showConfirmButton: false,
             timer: 1500
         })
     }
-    console.log('cartArr ===> ', cartArr);
+    console.log(cartArr);
 }
 
-const cartItems = JSON.stringify(cartArr);
-    localStorage.setItem('cartArr', cartItems)
 
-function gotoCart() {
-    
-    window.location = "./cart.html";
+function goToCart() {
+    const cart = JSON.stringify(cartArr);
+    localStorage.setItem('cartItem' , cart);
+    console.log('cart called');
+    window.location = 'cart.html';
 }
-    
-
-// const cartBtn = document.querySelector('.cart-btn');
-
-// function goToCart(){  
-//     const cart = JSON.stringify(cartArr);
-//     // localStorage.getItem('cartItem' , cart);
-//     localStorage.setItem('cartArr' , cart);
-//     console.log('cart called');
-  
-//     window.location = './cart.html';
-
-// }
