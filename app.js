@@ -116,7 +116,18 @@ for (let i = 0; i < phones.length; i++) {
     `
 
 }
-const cartArr = []
+
+const cartData = localStorage.getItem('cartItem');
+const jsonData = JSON.parse(cartData);
+
+let cartArr;
+if(Array.isArray(jsonData)){
+    cartArr = [...jsonData]
+
+}else{
+    cartArr = []
+}
+// const cartArr = []
 
 function addToCart(index) {
     // console.log('includes in array ==>', cartArr.includes(phones[index]));
@@ -154,5 +165,5 @@ function goToCart() {
     const cart = JSON.stringify(cartArr);
     localStorage.setItem('cartItem' , cart);
     console.log('cart called');
-    window.location = 'cart.html';
+    window.location = './cart.html';
 }
