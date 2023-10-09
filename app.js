@@ -167,3 +167,12 @@ function goToCart() {
     console.log('cart called');
     window.location = './cart.html';
 }
+
+
+function showLoginForm (){
+    window.location = './login.html';
+}
+
+function showRegisterForm (){
+    window.location = './register.html';
+}

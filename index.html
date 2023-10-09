@@ -25,10 +25,10 @@
                 </div>
                 <div class="flex space-x-2">
                     <a href="#" class="block">
-                        <button class="bg-white text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out">Log in</button>
+                        <button class="bg-white text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out" onclick="showLoginForm()">Log in</button>
                     </a>
                     <a href="#" class="block">
-                        <button class="bg-[#48afff] text-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-500 border border-white-500 transition duration-300 ease-in-out">Register</button>
+                        <button class="bg-[#48afff] text-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-500 border border-white-500 transition duration-300 ease-in-out" onclick="showRegisterForm()">Register</button>
                     </a>
                 </div>
             </div>
@@ -40,9 +40,7 @@
             <p><img src="assets/oppo.jpg" class="cursor-pointer"/></p>
             <p><img src="assets/xiaomi.jpg" class="cursor-pointer"/></p>
             <p><img src="assets/vivo.jpg" class="cursor-pointer"/></p>
-            <!-- <p class=""><img src="assets/tecno.jpg"/></p> -->
-            <!-- <p><img src="assets/realme.jpg"/></p> -->
-            <!-- <p><img src="assets/itel.jpg"/></p> -->
+            
         </div>
 
 
@@ -52,6 +50,7 @@
 
       </div>
     </nav>
+    
     <div class="main">
         <div class="cardContainer flex justify-evenly flex-wrap mt-[3rem] gap-[20px] m-[50px]">
 
@@ -61,7 +60,15 @@
         </div>
     </div>
 
+    <div id="loginForm" class="hidden">
+        <!-- Login form content goes here -->
+    </div>
+    
+    <div id="registerForm" class="hidden">
+        <!-- Register form content goes here -->
+    </div>
 
+    
     <script src="app.js"></script>
 </body>
 </html>
